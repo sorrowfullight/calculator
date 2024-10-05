@@ -1,14 +1,13 @@
+/* общее оформление */
+
 .calculator {
     margin: 50px auto;
     width: 300px;
     height: 500px;
-    background: #000;
-    color: #fff;
     border-radius: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     padding: 20px;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.7)
 }
 
 .buttons {
@@ -18,7 +17,7 @@
     "seven eight nine multiplication"
     "four five six minus"
     "one two three plus"
-    "zero zero dot equal";
+    "theme-button zero dot equal";
     justify-items: center;
     align-items: center;
     grid-gap: 5px;
@@ -29,9 +28,6 @@
     width: 60px;
     height: 60px;
     margin: 5px;
-    color: #fff;
-    background-color: #363636;
-    /* margin: 5px; */
     text-align: center;
     justify-self: center;
     font-size: 20px;
@@ -41,7 +37,6 @@
     align-items: center;
     align-content: center;
     justify-content: center;
-    box-shadow: 2px 2px 3px 2px rgba(255, 255, 255, 0.7);
 }
 
 .button:hover {
@@ -52,18 +47,8 @@
     filter: brightness(75%);
 }
 
-.button.grey {
-    background: #878787;
-}
-
-.button.turquoise {
-    background: #008b8b;
-}
-
-.button.zero {
-    grid-area: zero;
-    width: 135px;
-    border-radius: 20px;
+.theme-button svg:hover {
+    transform: scale(1.1);
 }
 
 .display {
@@ -74,6 +59,84 @@
     justify-content: flex-end;
     font-size: 50px;
     padding: 10px;
-    box-shadow: inset 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
     border-radius: 20px;
+}
+
+/* темная тема */
+
+.dark-theme .calculator {
+    background: #000;
+    color: #fff;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.7)
+}
+
+.dark-theme .button {
+    color: #fff;
+    background-color: #363636;
+    box-shadow: 2px 2px 3px 2px rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme .display {
+    box-shadow: inset 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
+    color: #fff; 
+}
+
+.dark-theme .button.ac,
+.dark-theme .button.plus-minus,
+.dark-theme .button.percentage {
+    background: #878787;
+}
+
+.dark-theme .button.division,
+.dark-theme .button.multiplication,
+.dark-theme .button.minus,
+.dark-theme .button.plus,
+.dark-theme .button.equal
+ {
+    background: #008b8b;
+}
+
+.dark-theme .theme-button {
+    background: #7FFFD4;
+}
+
+/* светлая тема */
+
+.light-theme .calculator {
+    background: #E1E1E1;
+    color: #4B4B4B;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.7)
+}
+
+.light-theme .button {
+    color: #4B4B4B;
+    background-color: #BDBCBC;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+.light-theme .display {
+    box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    color: #4B4B4B;
+}
+
+.light-theme .button.ac,
+.light-theme .button.plus-minus,
+.light-theme .button.percentage {
+    background: #4B4B4B;
+    color: #E1E1E1;
+}
+
+.light-theme .button.division,
+.light-theme .button.multiplication,
+.light-theme .button.minus,
+.light-theme .button.plus,
+.light-theme .button.equal
+ {
+    background: #2AAA8A;
+    color: #E1E1E1;
+}
+
+.light-theme .theme-button {
+    background: #478778;
+    color: #BDBCBC;
 }
