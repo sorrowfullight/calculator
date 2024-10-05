@@ -27,7 +27,7 @@
 > + calculation of percentage;
 > + sign reverse.
 >
-> It can handle the numbers up 10 digits.
+> It can handle the numbers up to 10 digits.
 
 ---
 
