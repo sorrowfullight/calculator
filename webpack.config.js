@@ -2,42 +2,43 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/main.js', // Входная точка вашего приложения
+    entry: './src/main.js', 
     output: {
-        filename: 'bundle.js', // Имя выходного файла
-        path: path.resolve(__dirname, 'dist'), // Папка для выхода
-        clean: true, // Очищать выходную папку перед каждым сборкой
+        filename: 'bundle.js', 
+        path: path.resolve(__dirname, 'dist'), 
+        clean: true, 
     },
     module: {
         rules: [
             {
-                test: /\.js$/, // Применять для всех файлов .js
-                exclude: /node_modules/, // Исключить node_modules
+                test: /\.js$/, 
+                exclude: /node_modules/, 
                 use: {
-                    loader: 'babel-loader', // Использовать Babel
+                    loader: 'babel-loader', 
                     options: {
-                        presets: ['@babel/preset-env'], // Пресеты Babel
+                        presets: ['@babel/preset-env'], 
                     },
                 },
             },
             {
-                test: /\.css$/, // Применять для всех файлов .css
-                use: ['style-loader', 'css-loader'], // Использовать эти лоадеры
+                test: /\.css$/, 
+                use: ['style-loader', 'css-loader'], 
             },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
           template: './src/index.html',
+          filename: 'index.html', 
         }),
       ],
-    devtool: 'source-map', // Генерация source maps
+    devtool: 'source-map', 
     devServer: {
         static: {
-          directory: path.join(__dirname, 'dist'), // Каталог для статики
+          directory: path.join(__dirname, 'dist'), 
         },
-        open: true, // Автоматически открывать браузер
+        open: true, 
       },
     
-      mode: 'development', // Режим сборки
+      mode: 'development', 
     };
