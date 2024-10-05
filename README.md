@@ -33,7 +33,7 @@
 
 ### _EN_ How to run the app / _RU_ Как запустить приложение
 ```bash
-git clone https://https://github.com/sorrowfullight/calculator
+git clone https://github.com/sorrowfullight/calculator
 cd calculator
 npm install
 npm run build
