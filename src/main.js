@@ -3,6 +3,8 @@ import './styles.css';
 // дисплей
 let display = document.querySelector('.display');
 
+let dot = document.querySelector('.dot');
+
 // массив с данными (числа и дробные знаменатели)
 let buttons = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 
@@ -26,12 +28,13 @@ let deleteNumber = () => {
         display.textContent = b || '0';
     } else if (sign !== '') {
         a = a.slice(0, -1);
-        display.textContent = a || '0';
+        display.textContent = a || '0'; 
     } else {
         a = a.slice(0, -1);
         display.textContent = a || '0'; 
     }
-}
+};
+
 // обработчик с функцией удаления последней цифры на клавише Backspace
 document.addEventListener('keydown', (evt) => {
     if (evt.key === 'Backspace') {
@@ -58,8 +61,6 @@ document.querySelector('.buttons').addEventListener('click', (evt) => {
     // курсор исчезает на пространстве за кнопками
     if (!evt.target.classList.contains('button')) return;  
 
-
-
     // подготовка выражения с помощью конкатенации    
     let button = evt.target.textContent;
     
@@ -68,8 +69,12 @@ document.querySelector('.buttons').addEventListener('click', (evt) => {
             if (a === "0" && button !== ".") {
                 a = '';
             }
-            if (a.length < 10) {
+            if (String(a).length < 10) {
                 a += button;
+                display.textContent = a;
+            }
+            if (String(a).length >10) {
+                a = String(a).slice(0, 10);
                 display.textContent = a;
             }
         } else if (a !== '' && b !== '' && finish) {
@@ -80,12 +85,17 @@ document.querySelector('.buttons').addEventListener('click', (evt) => {
             if (b === "0" && button !== ".") {
                 b = '';
             }
-            if (b.length < 10) {
+            if (String(b).length < 10) {
                 b += button;
+                display.textContent = b;
+            }
+            if (String(b).length >10) {
+                b = String(b).slice(0, 10);
                 display.textContent = b;
             }
         }
     }
+
 
     // Смена знака
     if (evt.target.classList.contains('plus-minus')) {
@@ -104,13 +114,13 @@ document.querySelector('.buttons').addEventListener('click', (evt) => {
             a = Number(a) / 100; 
             display.textContent = a; 
             if (String(a).length>10) {
-                display.textContent = 'Infinity'; 
+                display.textContent = String(a).slice(0, 10); 
             }
         } else if (a !== "" && b !== "") {
             b = (Number(a) * Number(b)) / 100; 
             display.textContent = b; 
             if (String(b).length>10) {
-                display.textContent = 'Infinity'; 
+                display.textContent = String(b).slice(0, 10); 
             }
         }
         return;
@@ -153,7 +163,7 @@ document.querySelector('.buttons').addEventListener('click', (evt) => {
             display.textContent = a; 
         } else {
             finish = true;
-            display.textContent = 'Infinity';    
+            display.textContent = String(a).slice(0, 10);    
         }
     }
 });
