@@ -19,6 +19,31 @@ let finish = false;
 let content = document.querySelector('main');
 let themeButton = document.querySelector('.theme-button');
 
+// Функция удаления последней цифры
+let deleteNumber = () => {
+    if (b !== '') {
+        b = b.slice(0, -1); 
+        display.textContent = b || '0';
+    } else if (sign !== '') {
+        a = a.slice(0, -1);
+        display.textContent = a || '0';
+    } else {
+        a = a.slice(0, -1);
+        display.textContent = a || '0'; 
+    }
+}
+// обработчик с функцией удаления последней цифры на клавише Backspace
+document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Backspace') {
+        deleteNumber();
+    }
+});
+
+// обработчик с функцией удаления последней цифры на кнопке DE
+document.querySelector('.de').addEventListener('click', () => {
+    deleteNumber();
+})
+
 // обработчик с функцией очистки выражения
 document.querySelector('.ac').addEventListener('click', () => {
     a = '';
@@ -32,6 +57,8 @@ document.querySelector('.ac').addEventListener('click', () => {
 document.querySelector('.buttons').addEventListener('click', (evt) => {
     // курсор исчезает на пространстве за кнопками
     if (!evt.target.classList.contains('button')) return;  
+
+
 
     // подготовка выражения с помощью конкатенации    
     let button = evt.target.textContent;
@@ -86,7 +113,6 @@ document.querySelector('.buttons').addEventListener('click', (evt) => {
                 display.textContent = 'Infinity'; 
             }
         }
-
         return;
     }
 
@@ -137,3 +163,7 @@ themeButton.addEventListener('click', ()=>{
     content.classList.toggle('light-theme');
     content.classList.toggle('dark-theme');
 });
+
+
+
+

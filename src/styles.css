@@ -3,7 +3,7 @@
 .calculator {
     margin: 50px auto;
     width: 300px;
-    height: 500px;
+    height: 570px;
     border-radius: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
@@ -13,11 +13,12 @@
 .buttons {
     display: grid;
     grid-template-areas: 
-    "ac plus-minus percentage division"
-    "seven eight nine multiplication"
-    "four five six minus"
-    "one two three plus"
-    "theme-button zero dot equal";
+    "ac de plus-minus percentage "
+    "seven eight nine division "
+    "four five six multiplication "
+    "one two three minus"
+    "zero zero dot plus"
+    "theme-button theme-button equal equal";
     justify-items: center;
     align-items: center;
     grid-gap: 5px;
@@ -38,6 +39,27 @@
     align-content: center;
     justify-content: center;
 }
+
+.button.zero {
+    grid-area: zero;
+    border-radius: 15px;
+    width: 135px;
+}
+
+.button.theme-button {
+    grid-area: theme-button;
+    border-radius: 15px;
+    width: 135px;
+}
+
+.button.equal {
+    grid-area: equal;
+    border-radius: 15px;
+    width: 135px;
+}
+
+
+
 
 .button:hover {
     filter: brightness(130%);
@@ -83,7 +105,8 @@
 
 .dark-theme .button.ac,
 .dark-theme .button.plus-minus,
-.dark-theme .button.percentage {
+.dark-theme .button.percentage,
+.dark-theme .button.de {
     background: #878787;
 }
 
@@ -121,7 +144,8 @@
 
 .light-theme .button.ac,
 .light-theme .button.plus-minus,
-.light-theme .button.percentage {
+.light-theme .button.percentage,
+.light-theme .button.de {
     background: #4B4B4B;
     color: #E1E1E1;
 }
