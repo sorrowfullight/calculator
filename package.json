@@ -17,8 +17,11 @@
     "webpack-dev-server": "^5.1.0"
   },
   "scripts": {
+    "lint": "eslint .",
     "build": "webpack --mode production",
+    "predeploy": "npm run build",
     "start": "webpack serve --open",
-    "lint": "eslint ."
-  }
+    "deploy": "gh-pages -d dist"
+  },
+  "homepage": "https://sorrowfullight.github.io/calculator/"
 }
