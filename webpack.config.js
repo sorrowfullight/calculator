@@ -32,7 +32,6 @@ module.exports = {
           filename: 'index.html', 
         }),
       ],
-    devtool: 'source-map', 
     devServer: {
         static: {
           directory: path.join(__dirname, 'dist'), 
@@ -40,5 +39,5 @@ module.exports = {
         open: true, 
       },
     
-      mode: 'development', 
+      mode: 'production', 
     };
