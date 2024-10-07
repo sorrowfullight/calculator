@@ -35,6 +35,19 @@
 
 ---
 
+### _RU_ Описание структуры папок
+
+> + ___Корневая папка___ - деплой приложения + html-разметка
+> + ___Папка dist___ - файлы, которые создаются с помощью вебпака для последующего рендеринга приложения из файлов из папки src, а также из html-разметки (корневая папка)
+> + ___Папка src___ - css-стили и логика приложения, описанная в файле main.js, которые позже преобразовываются через файл webpack.config.js (корневая папка) в файл bundle.js (папка dist)
+
+### _EN_ Structure of the folders
+
+> + ___Root folder___ - application deployment + html-file
+> + ___Folder 'dist'___- files created via webpack from folder 'src', namely from the files main.js and styles.css, as well as from index.html (root folder) to be rendered later as an app 
+> + ___Folder 'src'___ - css-styles and application logic (described in main.js) to be processed later by webpack.config.js(root folder) into bundle.js (folder 'dist')
+
+
 ### _EN_ How to run the app / _RU_ Как запустить приложение
 ```bash 
 git clone https://github.com/sorrowfullight/calculator
