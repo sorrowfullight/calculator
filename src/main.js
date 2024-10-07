@@ -98,8 +98,6 @@ document.querySelector('.buttons').addEventListener('click', (evt) => {
         }
     }
 
-
-
     // Смена знака
     if (evt.target.classList.contains('plus-minus')) {
         if (b !== '') {

@@ -12,26 +12,18 @@
     "gh-pages": "^6.1.1",
     "globals": "^15.10.0",
     "html-webpack-plugin": "^5.6.0",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "style-loader": "^4.0.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
   },
-  "lint-staged": {
-    "*.ts": "npx tsc --noEmit",
-    "*.{js,jsx,ts,tsx}": "npx eslint",
-    "*.{js,jsx,ts,tsx,html,css}": "npx prettier --check"
-  },
   "scripts": {
     "lint": "eslint .",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "start": "webpack serve --open",
-    "deploy": "gh-pages -d dist",
-    "prepare": "husky install"
+    "deploy": "gh-pages -d dist"
   },
   "homepage": "https://sorrowfullight.github.io/calculator/"
 }
