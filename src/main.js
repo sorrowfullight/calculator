@@ -3,8 +3,6 @@ import './styles.css';
 // дисплей
 let display = document.querySelector('.display');
 
-let dot = document.querySelector('.dot');
-
 // массив с данными (числа и дробные знаменатели)
 let buttons = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 
